@@ -11,6 +11,7 @@
 		449AF896296AA1FA00BF811B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AF895296AA1FA00BF811B /* ContentView.swift */; };
 		449AF898296AA1FF00BF811B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449AF897296AA1FF00BF811B /* Assets.xcassets */; };
 		449AF89C296AA1FF00BF811B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449AF89B296AA1FF00BF811B /* Preview Assets.xcassets */; };
+		449AF8B5296AA52600BF811B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AF8B4296AA52600BF811B /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		449AF897296AA1FF00BF811B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449AF899296AA1FF00BF811B /* BlackBird.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlackBird.entitlements; sourceTree = "<group>"; };
 		449AF89B296AA1FF00BF811B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		449AF8B4296AA52600BF811B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,11 @@
 		449AF892296AA1FA00BF811B /* BlackBird */ = {
 			isa = PBXGroup;
 			children = (
+				449AF8A7296AA3FF00BF811B /* Extensions */,
+				449AF8A5296AA3DA00BF811B /* Services */,
+				449AF8A4296AA3C900BF811B /* Model */,
+				449AF8A3296AA3B600BF811B /* ViewModel */,
+				449AF8A2296AA39E00BF811B /* View */,
 				449AF893296AA1FA00BF811B /* BlackBirdApp.swift */,
 				449AF895296AA1FA00BF811B /* ContentView.swift */,
 				449AF897296AA1FF00BF811B /* Assets.xcassets */,
@@ -67,6 +74,122 @@
 				449AF89B296AA1FF00BF811B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		449AF8A2296AA39E00BF811B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				449AF8B2296AA4B800BF811B /* Main */,
+				449AF8B1296AA4AF00BF811B /* Feed */,
+				449AF8B0296AA4AA00BF811B /* Search */,
+				449AF8AF296AA48C00BF811B /* Notifications */,
+				449AF8AE296AA47600BF811B /* Authentications */,
+				449AF8AC296AA45200BF811B /* Messages */,
+				449AF8AB296AA43900BF811B /* Authentication */,
+				449AF8AA296AA43300BF811B /* Items */,
+				449AF8A9296AA42700BF811B /* Post */,
+				449AF8A8296AA42100BF811B /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		449AF8A3296AA3B600BF811B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		449AF8A4296AA3C900BF811B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		449AF8A5296AA3DA00BF811B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		449AF8A7296AA3FF00BF811B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		449AF8A8296AA42100BF811B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		449AF8A9296AA42700BF811B /* Post */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		449AF8AA296AA43300BF811B /* Items */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		449AF8AB296AA43900BF811B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		449AF8AC296AA45200BF811B /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		449AF8AE296AA47600BF811B /* Authentications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authentications;
+			sourceTree = "<group>";
+		};
+		449AF8AF296AA48C00BF811B /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		449AF8B0296AA4AA00BF811B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		449AF8B1296AA4AF00BF811B /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		449AF8B2296AA4B800BF811B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				449AF8B4296AA52600BF811B /* Home.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449AF896296AA1FA00BF811B /* ContentView.swift in Sources */,
+				449AF8B5296AA52600BF811B /* Home.swift in Sources */,
 				449AF894296AA1FA00BF811B /* BlackBirdApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
