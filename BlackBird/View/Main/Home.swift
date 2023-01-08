@@ -12,19 +12,19 @@ struct Home: View {
         VStack{
             ZStack{
                 TabView{
-                    Text("Feed")
+                    Feed()
                         .tabItem{
                             Image("Home")
                         }
-                    Text("Search")
+                    SearchView()
                         .tabItem{
                             Image("Search")
                         }
-                    Text("Notifications")
+                    NotificationsView()
                         .tabItem{
                             Image("Notifications")
                         }
-                    Text("Messages")
+                    MessagesView()
                         .tabItem{
                             Image("Messages")
                         }

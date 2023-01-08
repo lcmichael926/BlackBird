@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Feed.swift
 //  BlackBird
 //
 //  Created by Michael Lau on 8/1/2023.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Feed: View {
     var body: some View {
-        Home()
+        Text("Feed")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Feed_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Feed()
     }
 }
