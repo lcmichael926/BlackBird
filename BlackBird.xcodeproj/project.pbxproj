@@ -26,6 +26,7 @@
 		44CFA19A296DCE61009DA264 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA199296DCE61009DA264 /* RegisterView.swift */; };
 		44CFA19C296DCF8E009DA264 /* CustomAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA19B296DCF8E009DA264 /* CustomAuthTextField.swift */; };
 		44CFA19E296DD0A8009DA264 /* SecureAuthTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA19D296DD0A8009DA264 /* SecureAuthTextView.swift */; };
+		44CFA1A0296DD2D3009DA264 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA19F296DD2D3009DA264 /* LogInView.swift */; };
 		44EE3462296D6ED900BF52C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3461296D6ED900BF52C1 /* Extensions.swift */; };
 		44EE3464296D719C00BF52C1 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3463296D719C00BF52C1 /* NotificationCell.swift */; };
 		44EE3466296D761C00BF52C1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3465296D761C00BF52C1 /* MessageCell.swift */; };
@@ -61,6 +62,7 @@
 		44CFA199296DCE61009DA264 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		44CFA19B296DCF8E009DA264 /* CustomAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthTextField.swift; sourceTree = "<group>"; };
 		44CFA19D296DD0A8009DA264 /* SecureAuthTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAuthTextView.swift; sourceTree = "<group>"; };
+		44CFA19F296DD2D3009DA264 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		44EE3461296D6ED900BF52C1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		44EE3463296D719C00BF52C1 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		44EE3465296D761C00BF52C1 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				44CFA197296DC585009DA264 /* WelcomeView.swift */,
 				44CFA199296DCE61009DA264 /* RegisterView.swift */,
+				44CFA19F296DD2D3009DA264 /* LogInView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				44CFA19E296DD0A8009DA264 /* SecureAuthTextView.swift in Sources */,
 				44CFA19A296DCE61009DA264 /* RegisterView.swift in Sources */,
 				44EE346E296D7F6700BF52C1 /* FollowView.swift in Sources */,
+				44CFA1A0296DD2D3009DA264 /* LogInView.swift in Sources */,
 				449AF8BF296AAF8A00BF811B /* MessagesView.swift in Sources */,
 				44CFA192296DAB8C009DA264 /* UserProfile.swift in Sources */,
 				44FB5D59296AC69300BDADBD /* MultilineTextField.swift in Sources */,
