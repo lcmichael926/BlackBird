@@ -13,8 +13,9 @@ struct Feed: View {
         content: {
             VStack(spacing:18){
                 
-                TweetCellView(tweet: "Hey Tim",
+                TweetCellView(tweet: "Yooooooooooooooo",
                 tweetImage: "post")
+                
                 Divider()
                 
                 ForEach(1...20, id: \.self){ _ in
@@ -22,6 +23,9 @@ struct Feed: View {
                     Divider()
                 }
             }
+            .padding(.top)
+            .padding(.horizontal)
+            .zIndex(0)
         })
     }
 }

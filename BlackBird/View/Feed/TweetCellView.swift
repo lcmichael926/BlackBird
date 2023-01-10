@@ -72,6 +72,7 @@ struct TweetCellView: View {
                     
                 }, label: {Image("upload")
                         .resizable()
+                        .renderingMode(.template)
                         .frame(width: 18, height: 15)
                 }).foregroundColor(.gray)
                 

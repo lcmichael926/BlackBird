@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4434D2CC296D4EB7006878EB /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4434D2CB296D4EB7006878EB /* SearchCell.swift */; };
+		4434D2CE296D4FE0006878EB /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4434D2CD296D4FE0006878EB /* SearchBar.swift */; };
+		4434D2D0296D58F8006878EB /* SearchUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4434D2CF296D58F8006878EB /* SearchUserCell.swift */; };
 		449AF894296AA1FA00BF811B /* BlackBirdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AF893296AA1FA00BF811B /* BlackBirdApp.swift */; };
 		449AF896296AA1FA00BF811B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AF895296AA1FA00BF811B /* ContentView.swift */; };
 		449AF898296AA1FF00BF811B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449AF897296AA1FF00BF811B /* Assets.xcassets */; };
@@ -16,12 +19,17 @@
 		449AF8BB296AAF4C00BF811B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AF8BA296AAF4C00BF811B /* SearchView.swift */; };
 		449AF8BD296AAF6C00BF811B /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AF8BC296AAF6C00BF811B /* NotificationsView.swift */; };
 		449AF8BF296AAF8A00BF811B /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AF8BE296AAF8A00BF811B /* MessagesView.swift */; };
+		44EE3462296D6ED900BF52C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3461296D6ED900BF52C1 /* Extensions.swift */; };
+		44EE3464296D719C00BF52C1 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3463296D719C00BF52C1 /* NotificationCell.swift */; };
 		44FB5D57296AC57300BDADBD /* CreateTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB5D56296AC57300BDADBD /* CreateTweetView.swift */; };
 		44FB5D59296AC69300BDADBD /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB5D58296AC69300BDADBD /* MultilineTextField.swift */; };
 		44FB5D5B296ACCE700BDADBD /* TweetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB5D5A296ACCE700BDADBD /* TweetCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4434D2CB296D4EB7006878EB /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		4434D2CD296D4FE0006878EB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		4434D2CF296D58F8006878EB /* SearchUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserCell.swift; sourceTree = "<group>"; };
 		449AF890296AA1FA00BF811B /* BlackBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449AF893296AA1FA00BF811B /* BlackBirdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackBirdApp.swift; sourceTree = "<group>"; };
 		449AF895296AA1FA00BF811B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +41,8 @@
 		449AF8BA296AAF4C00BF811B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		449AF8BC296AAF6C00BF811B /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		449AF8BE296AAF8A00BF811B /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		44EE3461296D6ED900BF52C1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		44EE3463296D719C00BF52C1 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		44FB5D56296AC57300BDADBD /* CreateTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetView.swift; sourceTree = "<group>"; };
 		44FB5D58296AC69300BDADBD /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 		44FB5D5A296ACCE700BDADBD /* TweetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellView.swift; sourceTree = "<group>"; };
@@ -131,6 +141,7 @@
 		449AF8A7296AA3FF00BF811B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				44EE3461296D6ED900BF52C1 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				44FB5D58296AC69300BDADBD /* MultilineTextField.swift */,
+				4434D2CD296D4FE0006878EB /* SearchBar.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -184,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				449AF8BC296AAF6C00BF811B /* NotificationsView.swift */,
+				44EE3463296D719C00BF52C1 /* NotificationCell.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -192,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				449AF8BA296AAF4C00BF811B /* SearchView.swift */,
+				4434D2CB296D4EB7006878EB /* SearchCell.swift */,
+				4434D2CF296D58F8006878EB /* SearchUserCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -284,15 +299,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FB5D5B296ACCE700BDADBD /* TweetCellView.swift in Sources */,
+				4434D2CC296D4EB7006878EB /* SearchCell.swift in Sources */,
 				44FB5D57296AC57300BDADBD /* CreateTweetView.swift in Sources */,
 				449AF8BB296AAF4C00BF811B /* SearchView.swift in Sources */,
+				4434D2D0296D58F8006878EB /* SearchUserCell.swift in Sources */,
 				449AF896296AA1FA00BF811B /* ContentView.swift in Sources */,
+				4434D2CE296D4FE0006878EB /* SearchBar.swift in Sources */,
 				449AF8B9296AAF3600BF811B /* Feed.swift in Sources */,
 				449AF8B5296AA52600BF811B /* Home.swift in Sources */,
 				449AF8BF296AAF8A00BF811B /* MessagesView.swift in Sources */,
 				44FB5D59296AC69300BDADBD /* MultilineTextField.swift in Sources */,
 				449AF894296AA1FA00BF811B /* BlackBirdApp.swift in Sources */,
 				449AF8BD296AAF6C00BF811B /* NotificationsView.swift in Sources */,
+				44EE3464296D719C00BF52C1 /* NotificationCell.swift in Sources */,
+				44EE3462296D6ED900BF52C1 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
