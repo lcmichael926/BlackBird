@@ -23,6 +23,9 @@
 		44CFA194296DAE6D009DA264 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA193296DAE6D009DA264 /* BlurView.swift */; };
 		44CFA196296DBA67009DA264 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA195296DBA67009DA264 /* TabButton.swift */; };
 		44CFA198296DC585009DA264 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA197296DC585009DA264 /* WelcomeView.swift */; };
+		44CFA19A296DCE61009DA264 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA199296DCE61009DA264 /* RegisterView.swift */; };
+		44CFA19C296DCF8E009DA264 /* CustomAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA19B296DCF8E009DA264 /* CustomAuthTextField.swift */; };
+		44CFA19E296DD0A8009DA264 /* SecureAuthTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA19D296DD0A8009DA264 /* SecureAuthTextView.swift */; };
 		44EE3462296D6ED900BF52C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3461296D6ED900BF52C1 /* Extensions.swift */; };
 		44EE3464296D719C00BF52C1 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3463296D719C00BF52C1 /* NotificationCell.swift */; };
 		44EE3466296D761C00BF52C1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3465296D761C00BF52C1 /* MessageCell.swift */; };
@@ -55,6 +58,9 @@
 		44CFA193296DAE6D009DA264 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		44CFA195296DBA67009DA264 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		44CFA197296DC585009DA264 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		44CFA199296DCE61009DA264 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		44CFA19B296DCF8E009DA264 /* CustomAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthTextField.swift; sourceTree = "<group>"; };
+		44CFA19D296DD0A8009DA264 /* SecureAuthTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAuthTextView.swift; sourceTree = "<group>"; };
 		44EE3461296D6ED900BF52C1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		44EE3463296D719C00BF52C1 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		44EE3465296D761C00BF52C1 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -191,6 +197,8 @@
 				44EE346D296D7F6700BF52C1 /* FollowView.swift */,
 				44EE346F296D821800BF52C1 /* MenuButton.swift */,
 				44CFA195296DBA67009DA264 /* TabButton.swift */,
+				44CFA19B296DCF8E009DA264 /* CustomAuthTextField.swift */,
+				44CFA19D296DD0A8009DA264 /* SecureAuthTextView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				44CFA197296DC585009DA264 /* WelcomeView.swift */,
+				44CFA199296DCE61009DA264 /* RegisterView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -343,6 +352,9 @@
 				449AF8B9296AAF3600BF811B /* Feed.swift in Sources */,
 				44EE3468296D79CF00BF52C1 /* TopBar.swift in Sources */,
 				449AF8B5296AA52600BF811B /* Home.swift in Sources */,
+				44CFA19C296DCF8E009DA264 /* CustomAuthTextField.swift in Sources */,
+				44CFA19E296DD0A8009DA264 /* SecureAuthTextView.swift in Sources */,
+				44CFA19A296DCE61009DA264 /* RegisterView.swift in Sources */,
 				44EE346E296D7F6700BF52C1 /* FollowView.swift in Sources */,
 				449AF8BF296AAF8A00BF811B /* MessagesView.swift in Sources */,
 				44CFA192296DAB8C009DA264 /* UserProfile.swift in Sources */,
