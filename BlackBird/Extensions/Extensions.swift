@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension UIApplication {
     func endEditing() {
@@ -14,11 +15,8 @@ extension UIApplication {
 }
 
 
-//class Car {
-//    var speed: Int = 0
-//    var seats: Int = 0
-//}
-
-//extension Car {
-//    var color: String = "Black"
-//}
+extension View {
+    func getRect() -> CGRect {
+        return UIScreen.main.bounds
+    }
+}

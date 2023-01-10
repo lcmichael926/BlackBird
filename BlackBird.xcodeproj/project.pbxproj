@@ -21,6 +21,8 @@
 		449AF8BF296AAF8A00BF811B /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AF8BE296AAF8A00BF811B /* MessagesView.swift */; };
 		44CFA192296DAB8C009DA264 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA191296DAB8C009DA264 /* UserProfile.swift */; };
 		44CFA194296DAE6D009DA264 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA193296DAE6D009DA264 /* BlurView.swift */; };
+		44CFA196296DBA67009DA264 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA195296DBA67009DA264 /* TabButton.swift */; };
+		44CFA198296DC585009DA264 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA197296DC585009DA264 /* WelcomeView.swift */; };
 		44EE3462296D6ED900BF52C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3461296D6ED900BF52C1 /* Extensions.swift */; };
 		44EE3464296D719C00BF52C1 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3463296D719C00BF52C1 /* NotificationCell.swift */; };
 		44EE3466296D761C00BF52C1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3465296D761C00BF52C1 /* MessageCell.swift */; };
@@ -51,6 +53,8 @@
 		449AF8BE296AAF8A00BF811B /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		44CFA191296DAB8C009DA264 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		44CFA193296DAE6D009DA264 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		44CFA195296DBA67009DA264 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		44CFA197296DC585009DA264 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		44EE3461296D6ED900BF52C1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		44EE3463296D719C00BF52C1 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		44EE3465296D761C00BF52C1 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				4434D2CD296D4FE0006878EB /* SearchBar.swift */,
 				44EE346D296D7F6700BF52C1 /* FollowView.swift */,
 				44EE346F296D821800BF52C1 /* MenuButton.swift */,
+				44CFA195296DBA67009DA264 /* TabButton.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 		449AF8AB296AA43900BF811B /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				44CFA197296DC585009DA264 /* WelcomeView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -342,7 +348,9 @@
 				44CFA192296DAB8C009DA264 /* UserProfile.swift in Sources */,
 				44FB5D59296AC69300BDADBD /* MultilineTextField.swift in Sources */,
 				449AF894296AA1FA00BF811B /* BlackBirdApp.swift in Sources */,
+				44CFA198296DC585009DA264 /* WelcomeView.swift in Sources */,
 				449AF8BD296AAF6C00BF811B /* NotificationsView.swift in Sources */,
+				44CFA196296DBA67009DA264 /* TabButton.swift in Sources */,
 				44EE3464296D719C00BF52C1 /* NotificationCell.swift in Sources */,
 				44EE3462296D6ED900BF52C1 /* Extensions.swift in Sources */,
 			);
