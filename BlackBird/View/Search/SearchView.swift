@@ -20,7 +20,7 @@ struct SearchView : View {
                 .padding(.horizontal)
             
             if !isEditing {
-                List(0..<9){i in
+                List(0..<9){ i in
                     
                     SearchCell(tag: "hello", tweets: String(i))
                     
