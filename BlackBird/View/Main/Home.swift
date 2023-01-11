@@ -21,7 +21,7 @@ struct Home: View {
             ZStack{
                 TabView{
                     
-                    Feed()
+                    Feed(user: user)
                         .onTapGesture {
                             self.selectedIndex = 0
                         }

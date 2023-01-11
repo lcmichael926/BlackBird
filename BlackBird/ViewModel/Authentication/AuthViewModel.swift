@@ -46,6 +46,7 @@ class AuthViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         defaults.set(user.token, forKey: "jsonwebtoken")
                         defaults.set(user.user.id, forKey: "userid")
+                        self.isAuthenticated = true
                         self.currentUser = user.user
                         print("logged in")
                     }
@@ -71,13 +72,15 @@ class AuthViewModel: ObservableObject {
             switch result {
                 case .success(let data):
                     guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else { return }
-                    DispatchQueue.main.async {
-                        UserDefaults.standard.setValue(user.id, forKey: "userid")
-                        self.isAuthenticated = true
-                        self.currentUser = user
-                        print(user)
-                    }
-            case.failure(let error):
+                
+                DispatchQueue.main.async {
+                    UserDefaults.standard.setValue(user.id, forKey: "userid")
+                    self.isAuthenticated = true
+                    self.currentUser = user
+                    print(user)
+                }
+                
+                case.failure(let error):
                 print(error.localizedDescription)
             }
         }
