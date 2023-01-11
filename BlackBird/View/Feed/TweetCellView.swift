@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TweetCellView: View {
     
@@ -26,28 +27,33 @@ struct TweetCellView: View {
                 
                 VStack(alignment: .leading, spacing: 10, content: {
                     (
-                        Text("\(self.viewModel.tweet.user)")
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    +
+                        Text("\(self.viewModel.tweet.username)")
+                            .fontWeight(.bold)
+                            .foregroundColor(.primary)
+                        +
                         Text("@\(self.viewModel.tweet.username)")
-                    .foregroundColor(.gray)
+                            .foregroundColor(.gray)
                     )
                     Text(self.viewModel.tweet.text)
                         .frame(maxHeight: 100, alignment: .top)
                     
-//                    if let image = tweetImage{
-//                        GeometryReader{ proxy in
-//                            Image(image)
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fill)
-//                                .frame(width: proxy.frame(in: .global).width,height: 250)
-//                                .cornerRadius(15)
-//                        }
-//                        .frame(height: 250)
-//                    }
-                        
+                    if let imageId = viewModel.tweet.id {
+                        if viewModel.tweet.image == "true" {
+                            
+                            GeometryReader { proxy in
+                                
+                                KFImage(URL(string: "http://localhost:3000/tweets/\(imageId)/image"))
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: proxy.frame(in: .global).width, height: 250)
+                                    .cornerRadius(15)
+                                
+                            }
+                            .frame(height: 250)
+                        }
+                    }
                 })
+                Spacer()
             })
             //Bottom Part
             HStack(spacing: 50, content: {
