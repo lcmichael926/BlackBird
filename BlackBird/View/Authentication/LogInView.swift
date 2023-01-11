@@ -13,6 +13,7 @@ struct LogInView: View {
     @State var password = ""
     @State var emailDone = false
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var viewModel = AuthViewModel()
     
     var body: some View {
         if !emailDone {
@@ -51,9 +52,7 @@ struct LogInView: View {
                 
                 VStack {
                     Button(action: {
-                        if !email.isEmpty{
-                            self.emailDone.toggle()
-                        }
+                        emailDone.toggle()
                     }, label: {
                         Capsule()
                             .frame(width: 360, height: 40, alignment: .center)
@@ -104,7 +103,7 @@ struct LogInView: View {
                 
                 VStack {
                     Button(action: {
-                        
+                        self.viewModel.login(email: email, password: password)
                     }, label: {
                         Capsule()
                             .frame(width: 360, height: 40, alignment: .center)
