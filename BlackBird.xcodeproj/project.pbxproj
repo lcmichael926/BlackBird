@@ -21,6 +21,7 @@
 		449AF8BF296AAF8A00BF811B /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AF8BE296AAF8A00BF811B /* MessagesView.swift */; };
 		449F6802296EC65E001F6D58 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F6801296EC65E001F6D58 /* AuthViewModel.swift */; };
 		449F6804296EC685001F6D58 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F6803296EC685001F6D58 /* User.swift */; };
+		44B5CF31296EEC5A000188EE /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5CF30296EEC5A000188EE /* AuthServices.swift */; };
 		44CFA192296DAB8C009DA264 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA191296DAB8C009DA264 /* UserProfile.swift */; };
 		44CFA194296DAE6D009DA264 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA193296DAE6D009DA264 /* BlurView.swift */; };
 		44CFA196296DBA67009DA264 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA195296DBA67009DA264 /* TabButton.swift */; };
@@ -59,6 +60,7 @@
 		449AF8BE296AAF8A00BF811B /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		449F6801296EC65E001F6D58 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		449F6803296EC685001F6D58 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		44B5CF30296EEC5A000188EE /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		44CFA191296DAB8C009DA264 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		44CFA193296DAE6D009DA264 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		44CFA195296DBA67009DA264 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		449AF8A5296AA3DA00BF811B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				44B5CF30296EEC5A000188EE /* AuthServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				44EE3470296D821800BF52C1 /* MenuButton.swift in Sources */,
 				44FB5D5B296ACCE700BDADBD /* TweetCellView.swift in Sources */,
 				44CFA194296DAE6D009DA264 /* BlurView.swift in Sources */,
+				44B5CF31296EEC5A000188EE /* AuthServices.swift in Sources */,
 				44EE346A296D7C8C00BF52C1 /* MainView.swift in Sources */,
 				449F6804296EC685001F6D58 /* User.swift in Sources */,
 				44EE3466296D761C00BF52C1 /* MessageCell.swift in Sources */,
