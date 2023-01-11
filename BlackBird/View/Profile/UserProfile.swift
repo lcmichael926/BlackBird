@@ -180,18 +180,9 @@ struct UserProfile: View {
                     )
                     .zIndex(1)
                     
-                    VStack(spacing: 18, content: {
+                    VStack(spacing: 18) {
                         
-                        TweetCellView(tweet: "I am good, I am really good.", tweetImage: "post")
-                        
-                        Divider()
-                        
-                        ForEach(1..<20, id:\.self){ _ in
-                            
-                            TweetCellView(tweet: sampleText)
-                            Divider()
-                        }
-                    })
+                    }
                     .padding(.top)
                     .zIndex(0)
                 }

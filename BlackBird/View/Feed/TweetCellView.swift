@@ -9,8 +9,11 @@ import SwiftUI
 
 struct TweetCellView: View {
     
-    var tweet:String
-    var tweetImage: String?
+    @ObservedObject var viewModel: TweetCellViewModel
+    
+    init(viewModel: TweetCellViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack{
@@ -23,25 +26,26 @@ struct TweetCellView: View {
                 
                 VStack(alignment: .leading, spacing: 10, content: {
                     (
-                    Text("Michael")
+                        Text("\(self.viewModel.tweet.user)")
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
                     +
-                    Text("@lcmichael926")
+                        Text("@\(self.viewModel.tweet.username)")
                     .foregroundColor(.gray)
                     )
-                    Text(tweet)
+                    Text(self.viewModel.tweet.text)
                         .frame(maxHeight: 100, alignment: .top)
-                    if let image = tweetImage{
-                        GeometryReader{ proxy in
-                            Image(image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: proxy.frame(in: .global).width,height: 250)
-                                .cornerRadius(15)
-                        }
-                        .frame(height: 250)
-                    }
+                    
+//                    if let image = tweetImage{
+//                        GeometryReader{ proxy in
+//                            Image(image)
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fill)
+//                                .frame(width: proxy.frame(in: .global).width,height: 250)
+//                                .cornerRadius(15)
+//                        }
+//                        .frame(height: 250)
+//                    }
                         
                 })
             })
@@ -84,10 +88,5 @@ struct TweetCellView: View {
     }
 }
 
-struct TweetCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetCellView(tweet: sampleText)
-    }
-}
 
 var sampleText = "I am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am GrootI am Groot"
