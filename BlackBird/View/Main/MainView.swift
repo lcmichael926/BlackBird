@@ -24,7 +24,7 @@ struct MainView: View {
                     VStack {
                         TopBar(x: $x)
                         
-                        Home()
+                        Home(user: user)
                     }
                     .offset(x: x + width)
                     

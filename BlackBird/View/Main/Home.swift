@@ -13,6 +13,8 @@ struct Home: View {
     @State var showCreateTweets = false
     @State var text = ""
     
+    let user: User
+    
     var body: some View {
         VStack{
             ZStack{
@@ -107,13 +109,9 @@ struct Home: View {
                     .padding()
                 }.padding(.bottom, 65)
             }
-            .sheet(isPresented: $showCreateTweets, content:{ CreateTweetView(text: text)})
+            //.sheet(isPresented: $showCreateTweets, content:{ CreateTweet(text: text)})
         }
     }
 }
 
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
+
