@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WelcomeView: View {
     
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     @State var width = UIScreen.main.bounds.width
     
     var body: some View {

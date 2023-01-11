@@ -25,13 +25,14 @@ public class AuthServices {
     
     static func login(email: String, password: String, completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void){
         let urlString = URL(string: "http://localhost:3000/users/login")!
-        
+        print(urlString)
         makeRequest(urlString: urlString, reqBody: ["email": email, "password": password]) { res in
             switch res {
-            case.success(let data):
+            case .success(let data):
                 completion(.success(data))
-            case.failure(let error):
+            case .failure(let error):
                 completion(.failure(.invalidCredentials))
+                print(error.localizedDescription)
             }
         }
     }
@@ -76,6 +77,9 @@ public class AuthServices {
                 completion(.failure(.noData))
                 return
             }
+            
+            completion(.success(data))
+            
             do{
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String : Any]{
                     

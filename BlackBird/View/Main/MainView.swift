@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     
-    //let user: User
+    let user: User
     
     //Hide the side menu
     @State var width = UIScreen.main.bounds.width - 90
