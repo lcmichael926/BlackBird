@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     
+    //let user: User
+    
     //Hide the side menu
     @State var width = UIScreen.main.bounds.width - 90
 
@@ -20,7 +22,8 @@ struct MainView: View {
                 ZStack(alignment: Alignment(horizontal: .leading, vertical: .center),
                        content: {
                     VStack {
-                        TopBar(x:$x)
+                        TopBar(x: $x)
+                        
                         Home()
                     }
                     .offset(x: x + width)
@@ -65,12 +68,5 @@ struct MainView: View {
             .navigationBarHidden(true)
             .navigationBarTitle("")
         }
-    }
-}
-                    
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
     }
 }

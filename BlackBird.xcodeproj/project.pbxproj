@@ -118,7 +118,6 @@
 				449AF8A3296AA3B600BF811B /* ViewModel */,
 				449AF8A2296AA39E00BF811B /* View */,
 				449AF893296AA1FA00BF811B /* BlackBirdApp.swift */,
-				449AF895296AA1FA00BF811B /* ContentView.swift */,
 				449AF897296AA1FF00BF811B /* Assets.xcassets */,
 				449AF899296AA1FF00BF811B /* BlackBird.entitlements */,
 				449AF89A296AA1FF00BF811B /* Preview Content */,
@@ -216,6 +215,7 @@
 		449AF8AB296AA43900BF811B /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				449AF895296AA1FA00BF811B /* ContentView.swift */,
 				44CFA197296DC585009DA264 /* WelcomeView.swift */,
 				44CFA199296DCE61009DA264 /* RegisterView.swift */,
 				44CFA19F296DD2D3009DA264 /* LogInView.swift */,

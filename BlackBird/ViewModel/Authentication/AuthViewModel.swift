@@ -18,7 +18,7 @@ class AuthViewModel: ObservableObject {
         
         if token != nil {
             isAuthenticated = true
-            
+
             if let userId = defaults.object(forKey: "userid") {
                 fetchUser(userId: userId as! String)
                 print("User Fetched")
@@ -27,7 +27,10 @@ class AuthViewModel: ObservableObject {
         else {
             isAuthenticated = false
         }
+        
     }
+    
+    static let shared = AuthViewModel()
     
     func login(email: String, password: String){
         
@@ -80,6 +83,16 @@ class AuthViewModel: ObservableObject {
     }
     
     func logout(){
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+            
+        }
+        DispatchQueue.main.async {
+            self.isAuthenticated = false
+        }
         
     }
 }
