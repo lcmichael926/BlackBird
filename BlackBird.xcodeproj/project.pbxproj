@@ -26,6 +26,8 @@
 		44C6495D296F2AD700DB0FF4 /* CreateTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6495C296F2AD700DB0FF4 /* CreateTweetViewModel.swift */; };
 		44C6495F296F2B5500DB0FF4 /* RequestServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6495E296F2B5500DB0FF4 /* RequestServices.swift */; };
 		44C64961296F312000DB0FF4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C64960296F312000DB0FF4 /* ImagePicker.swift */; };
+		44C64963296F4B4C00DB0FF4 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C64962296F4B4C00DB0FF4 /* ImageUploader.swift */; };
+		44C64966296F50A200DB0FF4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 44C64965296F50A200DB0FF4 /* Kingfisher */; };
 		44CFA192296DAB8C009DA264 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA191296DAB8C009DA264 /* UserProfile.swift */; };
 		44CFA194296DAE6D009DA264 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA193296DAE6D009DA264 /* BlurView.swift */; };
 		44CFA196296DBA67009DA264 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA195296DBA67009DA264 /* TabButton.swift */; };
@@ -69,6 +71,7 @@
 		44C6495C296F2AD700DB0FF4 /* CreateTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetViewModel.swift; sourceTree = "<group>"; };
 		44C6495E296F2B5500DB0FF4 /* RequestServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServices.swift; sourceTree = "<group>"; };
 		44C64960296F312000DB0FF4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		44C64962296F4B4C00DB0FF4 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		44CFA191296DAB8C009DA264 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		44CFA193296DAE6D009DA264 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		44CFA195296DBA67009DA264 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C64966296F50A200DB0FF4 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +184,7 @@
 			children = (
 				44B5CF30296EEC5A000188EE /* AuthServices.swift */,
 				44C6495E296F2B5500DB0FF4 /* RequestServices.swift */,
+				44C64962296F4B4C00DB0FF4 /* ImageUploader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -315,6 +320,9 @@
 			dependencies = (
 			);
 			name = BlackBird;
+			packageProductDependencies = (
+				44C64965296F50A200DB0FF4 /* Kingfisher */,
+			);
 			productName = BlackBird;
 			productReference = 449AF890296AA1FA00BF811B /* BlackBird.app */;
 			productType = "com.apple.product-type.application";
@@ -343,6 +351,9 @@
 				Base,
 			);
 			mainGroup = 449AF887296AA1FA00BF811B;
+			packageReferences = (
+				44C64964296F50A200DB0FF4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 449AF891296AA1FA00BF811B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -403,6 +414,7 @@
 				449AF8BD296AAF6C00BF811B /* NotificationsView.swift in Sources */,
 				44C6495D296F2AD700DB0FF4 /* CreateTweetViewModel.swift in Sources */,
 				44CFA196296DBA67009DA264 /* TabButton.swift in Sources */,
+				44C64963296F4B4C00DB0FF4 /* ImageUploader.swift in Sources */,
 				44EE3464296D719C00BF52C1 /* NotificationCell.swift in Sources */,
 				44EE3462296D6ED900BF52C1 /* Extensions.swift in Sources */,
 			);
@@ -543,7 +555,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
@@ -581,7 +593,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
@@ -618,6 +630,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		44C64964296F50A200DB0FF4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		44C64965296F50A200DB0FF4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 44C64964296F50A200DB0FF4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 449AF888296AA1FA00BF811B /* Project object */;
 }

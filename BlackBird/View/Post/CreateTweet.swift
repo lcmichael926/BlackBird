@@ -13,6 +13,7 @@ struct CreateTweet : View {
     
     @Binding var show : Bool
     @State var text = ""
+    let user: User
     
     @State var imagePickerRepresented = false
     @State private var selectedImage: UIImage?
@@ -37,7 +38,7 @@ struct CreateTweet : View {
                 
                 Button(action: {
                     if text != ""{
-                        self.viewModel.uploadPost(text: text)
+                        self.viewModel.uploadPost(text: text, image: selectedImage)
                     }
                     self.show.toggle()
                 }) {
