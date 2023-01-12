@@ -35,6 +35,7 @@
 		44C64971296FEFD200DB0FF4 /* CustomProfileBioTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C64970296FEFD200DB0FF4 /* CustomProfileBioTextField.swift */; };
 		44C64974296FF25400DB0FF4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C64973296FF25400DB0FF4 /* ProfileViewModel.swift */; };
 		44C64976297000D200DB0FF4 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C64975297000D200DB0FF4 /* EditProfileViewModel.swift */; };
+		44C64978297044A400DB0FF4 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C64977297044A400DB0FF4 /* RefreshableScrollView.swift */; };
 		44CFA192296DAB8C009DA264 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA191296DAB8C009DA264 /* UserProfile.swift */; };
 		44CFA194296DAE6D009DA264 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA193296DAE6D009DA264 /* BlurView.swift */; };
 		44CFA196296DBA67009DA264 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA195296DBA67009DA264 /* TabButton.swift */; };
@@ -86,6 +87,7 @@
 		44C64970296FEFD200DB0FF4 /* CustomProfileBioTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProfileBioTextField.swift; sourceTree = "<group>"; };
 		44C64973296FF25400DB0FF4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		44C64975297000D200DB0FF4 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		44C64977297044A400DB0FF4 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		44CFA191296DAB8C009DA264 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		44CFA193296DAE6D009DA264 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		44CFA195296DBA67009DA264 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				44CFA19D296DD0A8009DA264 /* SecureAuthTextView.swift */,
 				44C6496E296FE6BE00DB0FF4 /* CustomProfileTextField.swift */,
 				44C64970296FEFD200DB0FF4 /* CustomProfileBioTextField.swift */,
+				44C64977297044A400DB0FF4 /* RefreshableScrollView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				44EE3464296D719C00BF52C1 /* NotificationCell.swift in Sources */,
 				44EE3462296D6ED900BF52C1 /* Extensions.swift in Sources */,
 				44C64971296FEFD200DB0FF4 /* CustomProfileBioTextField.swift in Sources */,
+				44C64978297044A400DB0FF4 /* RefreshableScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
