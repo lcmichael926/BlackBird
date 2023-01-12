@@ -14,6 +14,11 @@ struct UserProfile: View {
     
     @ObservedObject var viewModel: ProfileViewModel
     
+    //For change button EditProfile and Follow use
+    var isCurrentUser: Bool {
+        return viewModel.user.isCurrentUser ?? false
+    }
+    
     @State var editProfileShow = false
 
     //Create smooth animation
@@ -28,6 +33,8 @@ struct UserProfile: View {
     init(user: User) {
         self.user = user
         self.viewModel = ProfileViewModel(user: user)
+        //Check is current user or not on console
+        print("USER: \(viewModel.user.isCurrentUser)")
     }
     
     var body: some View {
@@ -103,22 +110,41 @@ struct UserProfile: View {
                         
                         Spacer()
                         
-                        Button(action: {
-                            self.editProfileShow.toggle()
-                        }, label: {
-                            Text("Edit Profile")
-                                .foregroundColor(.blue)
-                                .padding(.vertical,10)
-                                .padding(.horizontal)
-                                .background(
-                                    Capsule()
-                                        .stroke(Color.blue,lineWidth: 1.5)
-                                )
-                        })
-                        .sheet(isPresented: $editProfileShow){
-                            
-                        } content: {
-                            EditProfileView(user: $viewModel.user)
+                        if (self.isCurrentUser){
+                            Button(action: {
+                                self.editProfileShow.toggle()
+                            }, label: {
+                                Text("Edit Profile")
+                                    .foregroundColor(.blue)
+                                    .padding(.vertical,10)
+                                    .padding(.horizontal)
+                                    .background(
+                                        Capsule()
+                                            .stroke(Color.blue,lineWidth: 1.5)
+                                    )
+                            })
+                            .sheet(isPresented: $editProfileShow){
+                                
+                            } content: {
+                                EditProfileView(user: $viewModel.user)
+                            }
+                        }
+                        else{
+                            Button {
+                                // Func for follow and unfollow
+                            } label: {
+                                Text("Edit Profile")
+                                    .foregroundColor(.blue)
+                                    .padding(.vertical,10)
+                                    .padding(.horizontal)
+                                    .background(
+                                        ZStack{
+                                            Capsule()
+                                                .foregroundColor(.black)
+                                        }
+                                    )
+                            }
+
                         }
                     }
                     .padding(.top,-25)
