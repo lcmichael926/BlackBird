@@ -31,7 +31,21 @@ class EditProfileViewModel: ObservableObject {
         self.uploadComplete.toggle()
     }
     
-
+    //Upload User Profile Picture
+    //Reuse of ImageUploader to upload picture
+    func uploadProfileImage(text: String, image: UIImage?){
+        
+        guard let user = AuthViewModel.shared.currentUser else { return }
+        
+        let urlPath = "/users/me/avatar"
+        
+        if let image = image {
+            print("There is an image")
+            ImageUploader.uploadImage(paramName: "avatar", fileName: "image1", image: image, urlPath: urlPath)
+        }
+    }
+    
+    // Upload user changed data to server
     func uploadUserData(name: String?, bio: String?, website: String?, location: String?) {
         
         let userId = user.id
