@@ -15,6 +15,11 @@ struct EditProfileView: View {
     
     @State var imagePickerRepresented = false
     
+    @State var name: String
+    @State var location: String
+    @State var bio: String
+    @State var website: String
+    
     var body: some View {
         VStack{
             ZStack {
@@ -109,9 +114,86 @@ struct EditProfileView: View {
                 }
                 .padding(.top, -25)
                 .padding(.bottom, -10)
+                
+                VStack{
+                    Divider()
+                    HStack {
+                        ZStack {
+                            HStack {
+                                Text("Name")
+                                    .foregroundColor(.black)
+                                    .fontWeight(.heavy)
+                                Spacer()
+                            }
+                            CustomProfileTextField(message: $name, placeholder: "Add your name")
+                                .padding(.leading, 90)
+                        }
+                    }
+                    .padding(.horizontal)
+                    
+                    
+                    
+                    Divider()
+                    
+                    
+                    
+                    HStack {
+                        ZStack {
+                            HStack {
+                                Text("Location")
+                                    .foregroundColor(.black)
+                                    .fontWeight(.heavy)
+                                Spacer()
+                            }
+                            CustomProfileTextField(message: $location, placeholder: "Add your location")
+                                .padding(.leading, 90)
+                        }
+                    }
+                    .padding(.horizontal)
+                    
+                    
+                    
+                    Divider()
+                    
+                    
+                    
+                    HStack {
+                        ZStack(alignment: .topLeading) {
+                            HStack {
+                                Text("Bio")
+                                    .foregroundColor(.black)
+                                    .fontWeight(.heavy)
+                                Spacer()
+                            }
+                            CustomProfileBioTextField(bio: $bio)
+                                .padding(.leading, 86)
+                                .padding(.top, -6)
+                        }
+                    }
+                    .padding(.horizontal)
+                    
+                    
+                    
+                    Divider()
+                    
+                    
+                    
+                    HStack {
+                        ZStack(alignment: .topLeading) {
+                            HStack {
+                                Text("Website")
+                                    .foregroundColor(.black)
+                                    .fontWeight(.heavy)
+                                Spacer()
+                            }
+                            CustomProfileTextField(message: $website, placeholder: "Add your website")
+                                .padding(.leading, 90)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
             }
-            
-            
+            Spacer()
             
             
         }
