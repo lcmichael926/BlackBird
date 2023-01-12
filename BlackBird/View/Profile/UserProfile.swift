@@ -19,6 +19,10 @@ struct UserProfile: View {
         return viewModel.user.isCurrentUser ?? false
     }
     
+    var isFollowed: Bool {
+        return viewModel.user.isFollowed ?? false
+    }
+    
     @State var editProfileShow = false
 
     //Create smooth animation
@@ -131,17 +135,25 @@ struct UserProfile: View {
                         }
                         else{
                             Button {
-                                //Call follow function
-                                self.viewModel.follow()
+                                //Ternary operator:
+                                //If isFollow is true, call unFollow
+                                //If isFollow is false, call Follow
+                                isFollowed ? self.viewModel.unfollow() : self.viewModel.follow()
                             } label: {
-                                Text("Follow")
-                                    .foregroundColor(.blue)
+                                //Ternary operator:
+                                //If isFollow is true, display Following
+                                //If isFollow is false, display Follow
+                                Text(isFollowed ? "Following" : "Follow")
+                                    .foregroundColor(isFollowed ? .black : .white)
                                     .padding(.vertical,10)
                                     .padding(.horizontal)
                                     .background(
                                         ZStack{
                                             Capsule()
-                                                .foregroundColor(.black)
+                                                .stroke(Color.black, lineWidth: isFollowed ? 1.5 : 0)
+                                                .foregroundColor(isFollowed ? .white : .black)
+                                            Capsule()
+                                                .foregroundColor(isFollowed ? .white : .black)
                                         }
                                     )
                             }
@@ -265,7 +277,7 @@ struct UserProfile: View {
                     VStack(spacing: 18) {
                         
                         ForEach(viewModel.tweets){ tweet in
-                            TweetCellView(viewModel: TweetCellViewModel(tweet: tweet))
+                            TweetCellView(viewModel: TweetCellViewModel(tweet: tweet, currentUser: AuthViewModel.shared.currentUser!))
                         }
                         
                     }

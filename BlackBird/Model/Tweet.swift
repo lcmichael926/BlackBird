@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Properties of tweet in DB
 struct Tweet: Identifiable, Decodable {
     let _id: String
     let text: String
@@ -17,5 +18,6 @@ struct Tweet: Identifiable, Decodable {
         return _id
     }
     let image: String?
-    
+    var likes : [String]
+    var didLike: Bool? = false
 }

@@ -7,11 +7,13 @@
 
 import Foundation
 
+//Token in DB
 struct ApiResponse: Decodable {
     var user: User
     var token: String
 }
 
+//Properties of tweet in DB
 struct User: Decodable, Identifiable {
     var _id: String
     var name: String

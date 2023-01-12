@@ -12,6 +12,8 @@ struct TweetCellView: View {
     
     @ObservedObject var viewModel: TweetCellViewModel
     
+    var didLike: Bool {return viewModel.tweet.didLike ?? false}
+    
     init(viewModel: TweetCellViewModel) {
         self.viewModel = viewModel
     }
@@ -83,11 +85,27 @@ struct TweetCellView: View {
                 }).foregroundColor(.gray)
                 
                 Button(action: {
+                    if (self.didLike){
+                        self.viewModel.unlikeTweet()
+                    }
+                    else {
+                        self.viewModel.likeTweet()
+                    }
+                })  {
                     
-                }, label: {Image("love")
-                        .resizable()
-                        .frame(width: 18, height: 15)
-                }).foregroundColor(.gray)
+                    if (self.didLike == false) {
+                        Image("love")
+                            .resizable()
+                            .frame(width: 18, height: 15)
+                    }else{
+                        Image("love")
+                            .resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(.red)
+                            .frame(width: 18, height: 15)
+                    }
+                    
+                }.foregroundColor(.gray)
                 
                 Button(action: {
                     

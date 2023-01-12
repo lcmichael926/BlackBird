@@ -12,10 +12,12 @@ class ProfileViewModel: ObservableObject {
     @Published var user: User
     @Published var tweets = [Tweet]()
     
+    //Execute functions below evereytime when init profile view
     init(user: User) {
         self.user = user
         fetchTweet()
         checkIfUserIsCurrentUser()
+        checkIfUserIsFollowed()
     }
     
     func fetchTweet(){
@@ -54,6 +56,7 @@ class ProfileViewModel: ObservableObject {
             print(result)
             print("Followed")
         }
+        self.user.isFollowed = true
     }
     
     func unfollow() {
