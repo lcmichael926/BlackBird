@@ -83,7 +83,7 @@ struct EditProfileView: View {
                 // 3 Types situation:
                 // No profile image -> New profile image
                 // Old profile image -> New profile image
-                // Invalid Image
+                // Cant have Image Choosed
                 
                 HStack{
                     if profileImage == nil {
@@ -222,6 +222,7 @@ struct EditProfileView: View {
             
             
         }
+        //Update current user data in view
         .onReceive(viewModel.$uploadComplete) { complete in
             if complete {
                 self.mode.wrappedValue.dismiss()

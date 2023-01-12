@@ -24,7 +24,7 @@ struct SlideMenu : View {
                 
                 VStack(alignment: .leading){
                     
-                    NavigationLink(destination: UserProfile(user: viewModel.currentUser!)) {
+                    NavigationLink(destination: UserProfile(user: self.viewModel.currentUser!)) {
                         KFImage(URL(string: "http://localhost:3000/users/\(self.viewModel.currentUser!.id)/avatar"))
                             .placeholder({
                                 Image("profile")
@@ -33,6 +33,8 @@ struct SlideMenu : View {
                             .resizable()
                             .frame(width: 60, height: 60)
                             .clipShape(Circle())
+                    }.onAppear{
+                        KingfisherManager.shared.cache.clearCache()
                     }
                                         
                     HStack(alignment: .top, spacing: 12) {

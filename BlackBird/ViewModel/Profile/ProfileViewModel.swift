@@ -67,4 +67,20 @@ class ProfileViewModel: ObservableObject {
         self.user.isFollowed = false
     }
     
+    func checkIfUserIsFollowed() {
+//        if (self.tweet.likes.contains(self.currentUser.id)) {
+//            self.tweet.didLike = true
+//        }
+//        else {
+//            self.tweet.didLike = false
+//        }
+        
+        if (self.user.followers.contains(AuthViewModel.shared.currentUser!._id)) {
+            self.user.isFollowed = true
+        }
+        else {
+            self.user.isFollowed = false
+        }
+    }
+    
 }

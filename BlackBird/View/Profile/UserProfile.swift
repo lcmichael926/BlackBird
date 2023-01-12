@@ -131,7 +131,7 @@ struct UserProfile: View {
                         }
                         else{
                             Button {
-                                // Func for follow and unfollow
+                                //Call follow function
                                 self.viewModel.follow()
                             } label: {
                                 Text("Follow")
