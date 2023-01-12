@@ -15,10 +15,20 @@ struct EditProfileView: View {
     
     @State var imagePickerRepresented = false
     
+    @Binding var user: User
+    
     @State var name: String
     @State var location: String
     @State var bio: String
     @State var website: String
+    
+    init(user: Binding<User>) {
+        self._user = user
+        self._name = State(initialValue: self._user.name.wrappedValue ?? "")
+        self._location = State(initialValue: self._user.location.wrappedValue ?? "")
+        self._bio = State(initialValue: self._user.bio.wrappedValue ?? "")
+        self._website = State(initialValue: self._user.website.wrappedValue ?? "")
+    }
     
     var body: some View {
         VStack{
@@ -71,7 +81,7 @@ struct EditProfileView: View {
                             KFImage(URL(string: "http://localhost:3000/users/id/avatar"))
                                 .resizable()
                                 .placeholder{
-                                    Image("blankpp")
+                                    Image("profile")
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .frame(width: 75, height: 75)
@@ -111,6 +121,9 @@ struct EditProfileView: View {
                         .padding(.leading, 12)
                     }
                     Spacer()
+                }
+                .onAppear{
+                    KingfisherManager.shared.cache.clearCache()
                 }
                 .padding(.top, -25)
                 .padding(.bottom, -10)

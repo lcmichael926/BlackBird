@@ -6,22 +6,30 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserProfile: View {
     
     let user: User
     
-    @State var offset: CGFloat = 0
+    @ObservedObject var viewModel: ProfileViewModel
     
-    @Environment(\.colorScheme) var colorScheme
-    
-    @State var currentTab = "Tweets"
-    
+    @State var editProfileShow = false
+
+    //Create smooth animation
     @Namespace var animation
     
+    @Environment(\.colorScheme) var colorScheme
+    @State var currentTab = "Tweets"
+    @State var offset: CGFloat = 0
     @State var tabBarOffset: CGFloat = 0
-    
     @State var titleOffset: CGFloat = 0
+    
+    init(user: User) {
+        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
+        
+    }
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
@@ -89,7 +97,9 @@ struct UserProfile: View {
                         
                         Spacer()
                         
-                        Button(action: {}, label: {
+                        Button(action: {
+                            self.editProfileShow.toggle()
+                        }, label: {
                             Text("Edit Profile")
                                 .foregroundColor(.blue)
                                 .padding(.vertical,10)
@@ -99,6 +109,11 @@ struct UserProfile: View {
                                         .stroke(Color.blue,lineWidth: 1.5)
                                 )
                         })
+                        .sheet(isPresented: $editProfileShow){
+                            
+                        } content: {
+                            EditProfileView(user: $viewModel.user)
+                        }
                     }
                     .padding(.top,-25)
                     .padding(.bottom,-10)
