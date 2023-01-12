@@ -132,8 +132,9 @@ struct UserProfile: View {
                         else{
                             Button {
                                 // Func for follow and unfollow
+                                self.viewModel.follow()
                             } label: {
-                                Text("Edit Profile")
+                                Text("Follow")
                                     .foregroundColor(.blue)
                                     .padding(.vertical,10)
                                     .padding(.horizontal)

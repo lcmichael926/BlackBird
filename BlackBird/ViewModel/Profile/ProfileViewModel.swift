@@ -45,4 +45,26 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    func follow() {
+        guard let authedUser = AuthViewModel.shared.currentUser else { return }
+        
+        RequestServices.requestDomain = "http://localhost:3000/users/\(self.user.id)/follow"
+        
+        RequestServices.followingProcess(id: self.user.id) { result in
+            print(result)
+            print("Followed")
+        }
+    }
+    
+    func unfollow() {
+        RequestServices.requestDomain = "http://localhost:3000/users/\(self.user.id)/unfollow"
+        
+        RequestServices.followingProcess(id: self.user.id) { result in
+            print(result)
+            print("Unfollowed")
+        }
+        print("Unfollowed")
+        self.user.isFollowed = false
+    }
+    
 }
