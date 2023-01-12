@@ -36,6 +36,7 @@
 		44C64974296FF25400DB0FF4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C64973296FF25400DB0FF4 /* ProfileViewModel.swift */; };
 		44C64976297000D200DB0FF4 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C64975297000D200DB0FF4 /* EditProfileViewModel.swift */; };
 		44C64978297044A400DB0FF4 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C64977297044A400DB0FF4 /* RefreshableScrollView.swift */; };
+		44C6497C2970514500DB0FF4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6497B2970514500DB0FF4 /* SearchViewModel.swift */; };
 		44CFA192296DAB8C009DA264 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA191296DAB8C009DA264 /* UserProfile.swift */; };
 		44CFA194296DAE6D009DA264 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA193296DAE6D009DA264 /* BlurView.swift */; };
 		44CFA196296DBA67009DA264 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA195296DBA67009DA264 /* TabButton.swift */; };
@@ -88,6 +89,7 @@
 		44C64973296FF25400DB0FF4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		44C64975297000D200DB0FF4 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		44C64977297044A400DB0FF4 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
+		44C6497B2970514500DB0FF4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		44CFA191296DAB8C009DA264 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		44CFA193296DAE6D009DA264 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		44CFA195296DBA67009DA264 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
@@ -180,7 +182,7 @@
 		449AF8A3296AA3B600BF811B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				44C6497A29704F8100DB0FF4 /* New Group */,
+				44C6497A29704F8100DB0FF4 /* Search */,
 				44C64972296FF23B00DB0FF4 /* Profile */,
 				44C6495B296F2AB200DB0FF4 /* PostTweet */,
 				44B5CF32296EFBFF000188EE /* Authentication */,
@@ -345,11 +347,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		44C6497A29704F8100DB0FF4 /* New Group */ = {
+		44C6497A29704F8100DB0FF4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				44C6497B2970514500DB0FF4 /* SearchViewModel.swift */,
 			);
-			path = "New Group";
+			name = Search;
+			path = ../Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +446,7 @@
 				44C6496D296FDB9100DB0FF4 /* EditProfileView.swift in Sources */,
 				44EE346C296D7EAA00BF52C1 /* SlideMenu.swift in Sources */,
 				449AF8BB296AAF4C00BF811B /* SearchView.swift in Sources */,
+				44C6497C2970514500DB0FF4 /* SearchViewModel.swift in Sources */,
 				4434D2D0296D58F8006878EB /* SearchUserCell.swift in Sources */,
 				449AF896296AA1FA00BF811B /* ContentView.swift in Sources */,
 				4434D2CE296D4FE0006878EB /* SearchBar.swift in Sources */,
