@@ -25,7 +25,11 @@ struct SlideMenu : View {
                 VStack(alignment: .leading){
                     
                     NavigationLink(destination: UserProfile(user: viewModel.currentUser!)) {
-                        Image("logo")
+                        KFImage(URL(string: "http://localhost:3000/users/\(self.viewModel.currentUser!.id)/avatar"))
+                            .placeholder({
+                                Image("profile")
+                                    .resizable()
+                            })
                             .resizable()
                             .frame(width: 60, height: 60)
                             .clipShape(Circle())

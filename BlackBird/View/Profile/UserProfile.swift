@@ -237,6 +237,10 @@ struct UserProfile: View {
                     
                     VStack(spacing: 18) {
                         
+                        ForEach(viewModel.tweets){ tweet in
+                            TweetCellView(viewModel: TweetCellViewModel(tweet: tweet))
+                        }
+                        
                     }
                     .padding(.top)
                     .zIndex(0)
