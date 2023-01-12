@@ -75,16 +75,13 @@ struct SlideMenu : View {
                         Spacer(minLength: 0)
                         
                         Button(action: {
-                            
                             withAnimation{
-                                
                                 show.toggle()
                             }
                             
                         }) {
-                            
                             Image(systemName: show ? "chevron.down" : "chevron.up")
-                                .foregroundColor(Color("twitter"))
+                                .foregroundColor(Color("bg"))
                         }
                     }
                     

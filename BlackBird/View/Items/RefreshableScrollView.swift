@@ -18,11 +18,11 @@ struct RefreshableScrollView<Content: View>: UIViewRepresentable {
     var refreshControl = UIRefreshControl()
     
     // View Builder to capture SwiftUI View...
-    init(@ViewBuilder content: @escaping ()-> Content,onRefresh: @escaping (UIRefreshControl) -> ()) {
-        self.content = content()
-        self.onRefresh = onRefresh
-    }
-    
+//    init(@ViewBuilder content: @escaping ()-> Content,onRefresh: @escaping (UIRefreshControl) -> ()) {
+//        self.content = content()
+//        self.onRefresh = onRefresh
+//    }
+
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
@@ -45,9 +45,6 @@ struct RefreshableScrollView<Content: View>: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIScrollView, context: Context) {
-        
-        // Because view is not updating dynamically...
-        // Updating View Dynamically....
         setUpView(uiscrollView: uiView)
     }
     
