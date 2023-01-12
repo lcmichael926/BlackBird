@@ -123,7 +123,7 @@ struct SlideMenu : View {
                             print("clciked")
                         }) {
                             
-                            Text("Settings and privacy")
+                            Text("Log Out")
                                 .foregroundColor(.black)
                         }
                         .padding(.top)
