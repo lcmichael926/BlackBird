@@ -28,6 +28,7 @@ struct SearchBar: View {
                             .padding(.leading, 8)
                     }
                 )
+            
                 
             Button(action: {
                 isEditing = false

@@ -180,6 +180,7 @@
 		449AF8A3296AA3B600BF811B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				44C6497A29704F8100DB0FF4 /* New Group */,
 				44C64972296FF23B00DB0FF4 /* Profile */,
 				44C6495B296F2AB200DB0FF4 /* PostTweet */,
 				44B5CF32296EFBFF000188EE /* Authentication */,
@@ -342,6 +343,13 @@
 				44C64975297000D200DB0FF4 /* EditProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		44C6497A29704F8100DB0FF4 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -110,11 +110,11 @@ public class AuthServices {
     
     //Fetch User Function
     
-    static func fetchUser(id: String, completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
+    static func fetchUser(completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
         
-        let urlString = URL(string: "http://localhost:3000/users/\(id)")!
-        
-        var urlRequest = URLRequest(url: urlString)
+//        let urlString = URL(string: "http://localhost:3000/users/\(id)")!
+//
+//        var urlRequest = URLRequest(url: urlString)
         
         let url = URL(string: requestDomain)!
         

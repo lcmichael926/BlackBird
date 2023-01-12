@@ -73,7 +73,7 @@ class AuthViewModel: ObservableObject {
         let defaults = UserDefaults.standard
         AuthServices.requestDomain = "http://localhost:3000/users/\(userId)"
         
-        AuthServices.fetchUser(id: userId) { res in
+        AuthServices.fetchUser() { res in
             switch res {
                 case .success(let data):
                     guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else {
