@@ -49,7 +49,7 @@ struct EditProfileView: View {
                     Spacer()
                     
                     Button {
-                        self.viewModel.save(name: name, bio: bio, website: website, location: location)
+                        self.viewModel.uploadUserData(name: name, bio: bio, website: website, location: location)
                     } label: {
                         Text("Save")
                             .foregroundColor(.black)
@@ -214,6 +214,15 @@ struct EditProfileView: View {
             Spacer()
             
             
+        }
+        .onReceive(viewModel.$uploadComplete) { complete in
+            if complete {
+                self.mode.wrappedValue.dismiss()
+                self.user.name = viewModel.user.name
+                self.user.website = viewModel.user.website
+                self.user.location = viewModel.user.location
+                self.user.bio = viewModel.user.bio
+            }
         }
     }
 }
