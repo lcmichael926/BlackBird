@@ -10,11 +10,14 @@ import Kingfisher
 
 struct EditProfileView: View {
     
+    @Environment(\.presentationMode) var mode
+    
     @State var profileImage: Image?
     @State private var selectedImage: UIImage?
     
     @State var imagePickerRepresented = false
     
+    @ObservedObject var viewModel: EditProfileViewModel
     @Binding var user: User
     
     @State var name: String
@@ -22,8 +25,10 @@ struct EditProfileView: View {
     @State var bio: String
     @State var website: String
     
+    //Bind User to show present info in edit page
     init(user: Binding<User>) {
         self._user = user
+        self.viewModel = EditProfileViewModel(user: self._user.wrappedValue)
         self._name = State(initialValue: self._user.name.wrappedValue ?? "")
         self._location = State(initialValue: self._user.location.wrappedValue ?? "")
         self._bio = State(initialValue: self._user.bio.wrappedValue ?? "")
@@ -34,17 +39,17 @@ struct EditProfileView: View {
         VStack{
             ZStack {
                 HStack {
-                    Button {
-                        
-                    } label: {
+                    Button (action: {
+                        self.mode.wrappedValue.dismiss()
+                    }, label: {
                         Text("Cancel")
                             .foregroundColor(.black)
-                    }
+                    })
                     
                     Spacer()
                     
                     Button {
-                        
+                        self.viewModel.save(name: name, bio: bio, website: website, location: location)
                     } label: {
                         Text("Save")
                             .foregroundColor(.black)
