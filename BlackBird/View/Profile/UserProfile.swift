@@ -9,6 +9,8 @@ import SwiftUI
 
 struct UserProfile: View {
     
+    let user: User
+    
     @State var offset: CGFloat = 0
     
     @Environment(\.colorScheme) var colorScheme
@@ -51,7 +53,7 @@ struct UserProfile: View {
                             // Title View...
                             VStack(spacing: 5, content: {
                                 
-                                Text("Michael")
+                                Text(self.user.username)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                                 
@@ -104,12 +106,12 @@ struct UserProfile: View {
                     // Profile Data...
                     VStack(alignment: .leading, spacing: 8, content: {
                         
-                        Text("Michael")
+                        Text(self.user.username)
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.primary)
                         
-                        Text("@lcmichael926")
+                        Text("@\(self.user.username)")
                             .foregroundColor(.gray)
                         
                         Text("I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!")
@@ -218,8 +220,3 @@ struct UserProfile: View {
     
 }
 
-struct UserProfile_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfile()
-    }
-}

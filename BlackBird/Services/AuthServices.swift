@@ -16,7 +16,18 @@ enum NetworkError: Error {
 
 enum AuthenticationError: Error {
     case invalidCredentials
-    case custome(errorMessage: String)
+    case custom(errorMessage: String)
+}
+
+struct LoginRequestBody: Codable {
+    let username: String
+    let password: String
+}
+
+struct LoginResponse: Codable {
+    let token: String?
+    let message: String?
+    let success: Bool?
 }
 
 public class AuthServices {
@@ -42,11 +53,15 @@ public class AuthServices {
         
         makeRequest(urlString: urlString, reqBody: ["email": email, "username": username, "name": name, "password": password]) { result in
             switch result{
-            case.success(let data):
+            case .success(let data):
                 completion(.success(data))
-            case.failure(let error):
+            case .failure(.invalidURL):
+                completion(.failure(.custom(errorMessage: "The user couldn't be registered")))
+            case .failure(.noData):
+                completion(.failure(.custom(errorMessage: "No Data")))
+            case .failure(.decodingError):
                 completion(.failure(.invalidCredentials))
-            }
+        }
         }
     }
     
@@ -95,26 +110,30 @@ public class AuthServices {
     
     //Fetch User Function
     
-    static func fetchUser(id: String, completion: @escaping (_ result: Result<Data, AuthenticationError>) -> Void) {
+    static func fetchUser(id: String, completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
         
         let urlString = URL(string: "http://localhost:3000/users/\(id)")!
         
         var urlRequest = URLRequest(url: urlString)
         
+        let url = URL(string: requestDomain)!
+        
         let session = URLSession.shared
         
-        urlRequest.httpMethod = "GET"
+        var request = URLRequest(url: url)
         
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content")
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "GET"
         
-        let task = session.dataTask(with: urlRequest) { data, res, err in
-            guard let err = err else {
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTask(with: request) { data, res, err in
+            guard err == nil else {
                 return
             }
             guard let data = data else  {
-                return
                 completion(.failure(.invalidCredentials))
+                return
             }
             
             completion(.success(data))
@@ -122,9 +141,9 @@ public class AuthServices {
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]{
                 }
             }
-            catch let err {
+            catch let error {
                 completion(.failure(.invalidCredentials))
-                print(err)
+                print(error)
             }
             
         }

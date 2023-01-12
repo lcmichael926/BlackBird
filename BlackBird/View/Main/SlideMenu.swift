@@ -6,161 +6,199 @@
 //
 
 import SwiftUI
+import Kingfisher
+
+var menuButtons = ["Profile","Lists","Topics","Bookmarks","Moments"]
 
 struct SlideMenu : View {
     
-    @State var show = false
-    
-    var menuButtons = ["Profile","Lists","Topics","Bookmarks","Moments"]
+    @ObservedObject var viewModel: AuthViewModel
     
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
+    @State var show = true
     
-    @State var width = UIScreen.main.bounds.width
-    
-    var body: some View{
+    var body: some View {
+        
         VStack {
-            HStack(spacing: 0, content: {
-                VStack(alignment: .leading, content: {
+            HStack(spacing: 0){
+                
+                VStack(alignment: .leading){
                     
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                        .clipShape(Circle())
-                    
-                    HStack(alignment: .top, spacing: 12, content: {
-                        VStack(alignment: .leading, spacing: 12, content: {
-                            Text("Michael")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
+                    NavigationLink(destination: UserProfile(user: viewModel.currentUser!)) {
+                        Image("logo")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .clipShape(Circle())
+                    }
+                                        
+                    HStack(alignment: .top, spacing: 12) {
+                        
+                        VStack(alignment: .leading, spacing: 12) {
                             
-                            Text("@lcmichael926")
+                            NavigationLink(destination: UserProfile(user: viewModel.currentUser!)) {
+                                Text(viewModel.currentUser!.name)
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                            }
+                            
+                            Text("@\(viewModel.currentUser!.username)")
                                 .foregroundColor(.gray)
                             
-                            HStack(spacing: 20, content: {
+                            // Follow Counts...
+                            
+                            HStack(spacing: 20){
                                 
                                 FollowView(count: 8, title: "Following")
+                                    .onTapGesture {
+                                        
+                                    }
                                 
-                                FollowView(count: 16, title: "Followers")
-                                
-                            })
-                            .padding(.top, 10)
+                                FollowView(count: 18, title: "Following")
+                                    .onTapGesture {
+                                        // do something here....
+                                    }
+                                    
+                            }
+                            .padding(.top,10)
                             
                             Divider()
                                 .padding(.top,10)
-                        })
+                        }
                         
                         Spacer(minLength: 0)
                         
                         Button(action: {
+                            
                             withAnimation{
-                                self.show.toggle()
+                                
+                                show.toggle()
                             }
-                        }, label: {
+                            
+                        }) {
+                            
                             Image(systemName: show ? "chevron.down" : "chevron.up")
-                                .foregroundColor(Color("bg"))
-                        })
-                    })
+                                .foregroundColor(Color("twitter"))
+                        }
+                    }
                     
-                    VStack(alignment: .leading, content: {
-                        ForEach(menuButtons,id: \.self){ item in
-                            MenuButton(title: item)
+                    // Different Views When up or down buttons pressed....
+                    
+                    VStack(alignment: .leading){
+                        
+                        // Menu Buttons....
+                        
+                        ForEach(menuButtons,id: \.self){menu in
+                            
+                            NavigationLink(destination: UserProfile(user: viewModel.currentUser!)) {
+                                MenuButton(title: menu)
+                            }
+                            
+                            
+    //                        Button(action: {
+    //                            // switch your actions or work based on title....
+    //                        }) {
+    //
+    //                            MenuButton(title: menu)
+    //                        }
                         }
                         
                         Divider()
                             .padding(.top)
                         
                         Button(action: {
+                            // switch your actions or work based on title....
+                        }) {
                             
-                        }, label: {
                             MenuButton(title: "Twitter Ads")
-                        })
+                        }
                         
                         Divider()
                         
                         Button(action: {
+                            AuthViewModel.shared.logout()
+                            print("clciked")
+                        }) {
                             
-                        }, label: {
                             Text("Settings and privacy")
                                 .foregroundColor(.black)
-                        })
-                        .padding(.top, 20)
+                        }
+                        .padding(.top)
                         
-                        
-                        Button(action: {
+                        Button(action: {}) {
                             
-                        }, label: {
                             Text("Help centre")
                                 .foregroundColor(.black)
-                        })
-
+                        }
+                        .padding(.top,20)
+                        
                         Spacer(minLength: 0)
                         
                         Divider()
                             .padding(.bottom)
                         
                         HStack{
-                            Button(action: {
+                            
+                            Button(action: {}) {
                                 
-                            }, label: {
                                 Image("help")
                                     .renderingMode(.template)
                                     .resizable()
                                     .frame(width: 26, height: 26)
-                                    .foregroundColor(Color("bg"))
-                            })
+                                    .foregroundColor(Color("twitter"))
+                            }
+                            
                             Spacer(minLength: 0)
                             
-                            Image("barcode")
-                                .renderingMode(.template)
-                                .resizable()
-                                .frame(width: 26, height: 26)
-                                .foregroundColor(Color("bg"))
+                            Button(action: {}) {
+                                
+                                Image("barcode")
+                                    .renderingMode(.template)
+                                    .resizable()
+                                    .frame(width: 26, height: 26)
+                                    .foregroundColor(Color("twitter"))
+                            }
                         }
-
-                    })
+                    }
+                    // hiding this view when down arrow pressed...
                     .opacity(show ? 1 : 0)
                     .frame(height: show ? nil : 0)
                     
-                    VStack(alignment: .leading, content: {
-                        Button(action: {
-                            
-                        }, label: {
-                            Text("Create a new account")
-                                .foregroundColor(Color("bg"))
-                        })
+                    // Alternative View For Up Arrow...
+                    
+                    VStack(alignment: .leading){
                         
-                        Button(action: {
+                        Button(action: {}) {
                             
-                        }, label: {
+                            Text("Create a new account")
+                                .foregroundColor(Color("twitter"))
+                        }
+                        .padding(.bottom)
+                        
+                        Button(action: {}) {
+                            
                             Text("Add an existing account")
-                                .foregroundColor(Color("bg"))
-                        })
+                                .foregroundColor(Color("twitter"))
+                        }
                         
                         Spacer(minLength: 0)
-                        
-                    })
+                    }
+                    .opacity(show ? 0 : 1)
+                    .frame(height: show ? 0 : nil)
                     
-                    .opacity(!show ? 1 : 0)
-                    .frame(height: !show ? nil : 0)
                     
-                })
+                }
                 .padding(.horizontal,20)
+                // since vertical edges are ignored....
                 .padding(.top,edges!.top == 0 ? 15 : edges?.top)
                 .padding(.bottom,edges!.bottom == 0 ? 15 : edges?.bottom)
-                
-                .frame(width: width - 90)
+                // default width...
+                .frame(width: UIScreen.main.bounds.width - 90)
                 .background(Color.white)
                 .ignoresSafeArea(.all, edges: .vertical)
                 
                 Spacer(minLength: 0)
-            })
+            }
         }
-    }
-}
-    
-struct SlideMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        SlideMenu()
     }
 }

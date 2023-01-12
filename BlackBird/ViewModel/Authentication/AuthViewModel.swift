@@ -20,16 +20,16 @@ class AuthViewModel: ObservableObject {
         
         if token != nil {
             isAuthenticated = true
-
+            
             if let userId = defaults.object(forKey: "userid") {
                 fetchUser(userId: userId as! String)
-                print("User Fetched")
+                print("User fetched")
             }
+            
         }
         else {
             isAuthenticated = false
         }
-        
     }
     
     static let shared = AuthViewModel()
@@ -68,19 +68,24 @@ class AuthViewModel: ObservableObject {
     }
     
     func fetchUser(userId: String){
-        AuthServices.fetchUser(id: userId) { result in
-            switch result {
+        print(userId)
+        
+        let defaults = UserDefaults.standard
+        AuthServices.requestDomain = "http://localhost:3000/users/\(userId)"
+        
+        AuthServices.fetchUser(id: userId) { res in
+            switch res {
                 case .success(let data):
-                    guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else { return }
-                
-                DispatchQueue.main.async {
-                    UserDefaults.standard.setValue(user.id, forKey: "userid")
-                    self.isAuthenticated = true
-                    self.currentUser = user
-                    print(user)
-                }
-                
-                case.failure(let error):
+                    guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        defaults.setValue(user.id, forKey: "userid")
+                        self.isAuthenticated = true
+                        self.currentUser = user
+                        print(user)
+                    }
+            case .failure(let error):
                 print(error.localizedDescription)
             }
         }
