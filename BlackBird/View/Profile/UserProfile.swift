@@ -83,7 +83,14 @@ struct UserProfile: View {
 
                 VStack{
                     HStack{
-                        Image("logo")
+                        KFImage(URL(string: "http://localhost:3000/users/\(self.viewModel.user.id)/avatar"))
+                            .placeholder({
+                                Image("profile")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 75, height: 75)
+                                    .clipShape(Circle())
+                            })
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 75, height: 75)
@@ -118,47 +125,79 @@ struct UserProfile: View {
                     .padding(.bottom,-10)
                     
                     // Profile Data...
-                    VStack(alignment: .leading, spacing: 8, content: {
-                        
-                        Text(self.user.username)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.primary)
-                        
-                        Text("@\(self.user.username)")
-                            .foregroundColor(.gray)
-                        
-                        Text("I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!I love Vtubers!")
-                        
-                        HStack(spacing: 5){
+                    HStack{
+                        VStack(alignment: .leading, spacing: 8, content: {
                             
-                            Text("20")
+                            Text(self.viewModel.user.username)
+                                .font(.title2)
+                                .fontWeight(.bold)
                                 .foregroundColor(.primary)
-                                .fontWeight(.semibold)
                             
-                            Text("Followers")
+                            Text("@\(self.viewModel.user.username)")
                                 .foregroundColor(.gray)
                             
-                            Text("400")
-                                .foregroundColor(.primary)
-                                .fontWeight(.semibold)
-                                .padding(.leading,10)
+                            Text(viewModel.user.bio ?? "Hi, Nice to meet you! Hi, Nice to meet you! Hi, Nice to meet you!")
                             
-                            Text("Following")
-                                .foregroundColor(.gray)
-                        }
-                        .padding(.top,8)
-                    })
-                    .overlay(GeometryReader { proxy -> Color in
-                            
-                            let minY = proxy.frame(in: .global).minY
-                            
-                            DispatchQueue.main.async {
-                                self.titleOffset = minY
+                            HStack(spacing: 8){
+                                if let userLocation = viewModel.user.location {
+                                    if (userLocation != "") {
+                                        HStack(spacing: 2) {
+                                            Image(systemName: "mappin.circle.fill")
+                                                .frame(width: 24, height: 24)
+                                                .foregroundColor(.gray)
+                                            Text(userLocation)
+                                                .foregroundColor(.gray)
+                                                .font(.system(size: 14))
+                                        }
+                                    }
+                                }
+                                
+                                if let userWebsite = viewModel.user.website {
+                                    if (userWebsite != "") {
+                                        HStack(spacing: 2) {
+                                            Image(systemName: "link")
+                                                .frame(width: 24, height: 24)
+                                                .foregroundColor(.gray)
+                                            Text(userWebsite)
+                                                .foregroundColor(Color("bg"))
+                                                .font(.system(size: 14))
+                                        }
+                                    }
+                                }
                             }
-                            return Color.clear
-                        }
-                        .frame(width: 0, height: 0),alignment: .top)
+                            
+                            HStack(spacing: 5){
+                                
+                                Text("20")
+                                    .foregroundColor(.primary)
+                                    .fontWeight(.semibold)
+                                
+                                Text("Followers")
+                                    .foregroundColor(.gray)
+                                
+                                Text("400")
+                                    .foregroundColor(.primary)
+                                    .fontWeight(.semibold)
+                                    .padding(.leading,10)
+                                
+                                Text("Following")
+                                    .foregroundColor(.gray)
+                            }
+                            .padding(.top,8)
+                        })
+                        .padding(.leading, 8)
+                        .overlay(GeometryReader { proxy -> Color in
+                                
+                                let minY = proxy.frame(in: .global).minY
+                                
+                                DispatchQueue.main.async {
+                                    self.titleOffset = minY
+                                }
+                                return Color.clear
+                            }
+                            .frame(width: 0, height: 0),alignment: .top)
+                        Spacer()
+                    }
                     
                     // Custom Segmented Menu...
                     
